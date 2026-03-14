@@ -207,14 +207,14 @@ export default function Portfolio() {
       </nav>
 
       {/* ── HERO ───────────────────────────────────────────────────────── */}
-      <section ref={heroRef} className="relative min-h-screen flex flex-col justify-center items-start px-6 md:px-20 overflow-hidden">
+      <section ref={heroRef} className="relative min-h-screen flex flex-col md:flex-row justify-center items-center px-6 md:px-20 overflow-hidden gap-12">
         <GlowOrb className="w-[600px] h-[600px] bg-sky-500 -top-40 -right-40" />
         <GlowOrb className="w-[400px] h-[400px] bg-indigo-600 bottom-10 left-10" />
 
         {/* grid lines */}
         <div aria-hidden className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:80px_80px]" />
 
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 max-w-5xl">
+        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="relative z-10 max-w-5xl flex-1">
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
@@ -268,6 +268,23 @@ export default function Portfolio() {
               Get in Touch
             </a>
           </motion.div>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, x: 20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="relative z-10 flex-1 max-w-md"
+        >
+          <video
+            autoPlay
+            muted
+            loop
+            className="w-full rounded-2xl border border-white/[0.07] shadow-2xl"
+          >
+            <source src="/Male%20Programmer%20Developed%20Website.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </motion.div>
 
         {/* scroll hint */}
